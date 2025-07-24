@@ -146,6 +146,8 @@ MIT License — see [LICENSE](LICENSE) file for details.
 
 ---
 
-## Authors & Contributions
+## Contact
 
-Crafted by your development team. Contributions welcome via pull requests or issue discussions.
+**Anis Toauti**  
+Senior .NET Developer | Cloud & DevOps Enthusiast  
+[LinkedIn](https://www.linkedin.com/in/anis-toauti) | [GitHub](https://github.com/kiranis) | Montréal, QC
