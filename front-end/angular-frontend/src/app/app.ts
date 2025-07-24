@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('angular-frontend');
+  constructor(private router: Router) {}
+
+  isTrackingPage(): boolean {
+    // Implement your logic to determine if the current page is the tracking page
+    return this.router.url.startsWith('/tracking');
+  }
+
+  navigateToDemo(trackingNumber: string): void {
+    this.router.navigate(['/tracking'], { queryParams: { trackingNumber } });
+  }
 }

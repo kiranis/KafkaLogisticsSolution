@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-package-tracking',
@@ -20,17 +22,24 @@ scanEvents: any;
 loading: any;
 error: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute
+    ) {
+      this.route.queryParams.subscribe(params => {
+        if (params['demo']) {
+          this.trackingNumber = params['demo'];
+          this.trackPackage(); // Auto-trigger tracking
+        }
+      });
+    }
 
   trackPackage() {
-    // Your tracking logic here
   }
 
   getCurrentStatus() {
-    // Your status logic here
   }
 
   formatETA(dateTime: string) {
-    // Your ETA formatting logic here
   }
 }
