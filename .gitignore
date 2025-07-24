@@ -1,4 +1,3 @@
-
 # .NET Core
 bin/
 obj/
@@ -31,12 +30,15 @@ packages/
 # Logs
 *.log
 
-# Secrets
+# Secrets - Keep some appsettings
 secrets.json
-appsettings.*.json
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+# But keep base appsettings.json
+!appsettings.json
 
 # Docker
-*.dockerfile
 docker-compose.override.yml
 
 # OS-generated files
@@ -45,3 +47,60 @@ Thumbs.db
 
 # EF Core Migrations Snapshots
 *MigrationsSnapshot.cs
+
+# Node.js & Angular
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular build outputs
+front-end/angular-frontend/dist/
+front-end/angular-frontend/.angular/
+front-end/angular-frontend/tmp/
+
+# Angular cache
+front-end/angular-frontend/.angular/cache/
+
+# Environment files
+front-end/angular-frontend/.env
+front-end/angular-frontend/.env.local
+front-end/angular-frontend/.env.development.local
+front-end/angular-frontend/.env.test.local
+front-end/angular-frontend/.env.production.local
+
+# Angular CLI coverage
+front-end/angular-frontend/coverage/
+
+# Storybook build outputs
+front-end/angular-frontend/storybook-static/
+
+# Kafka & Infrastructure
+kafka-data/
+zookeeper-data/
+postgres-data/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# JetBrains
+*.iml
+*.ipr
+*.iws
+
+# Test results
+TestResults/
+*.trx
+*.coveragexml
+
+# Backup files
+*.bak
+*.backup

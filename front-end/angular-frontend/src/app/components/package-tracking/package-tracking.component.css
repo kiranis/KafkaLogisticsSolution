@@ -1,0 +1,174 @@
+.tracking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tracking-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.track-btn {
+  padding: 12px 24px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.track-btn:hover {
+  background: #0056b3;
+}
+
+.status-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-badge {
+  background: #28a745;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.eta-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.eta-time {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.confidence {
+  color: #666;
+  font-size: 14px;
+}
+
+.timeline-section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -23px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #007bff;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.timeline-item.current .timeline-marker {
+  background: #28a745;
+  box-shadow: 0 0 0 2px #28a745;
+}
+
+.timeline-content {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+.timeline-item.current .timeline-content {
+  border-left-color: #28a745;
+}
+
+.scan-location {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.scan-type {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.scan-time {
+  color: #999;
+  font-size: 14px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.error {
+  color: #dc3545;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+}
+
+.loading {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .eta-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-section {
+    flex-direction: column;
+  }
+}

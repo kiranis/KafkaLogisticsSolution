@@ -1,0 +1,64 @@
+<div class="tracking-container">
+      <h1>Package Tracking</h1>
+      
+      <!-- Search Section -->
+      <div class="search-section">
+        <input 
+          type="text" 
+          [(ngModel)]="trackingNumber" 
+          placeholder="Enter tracking number (e.g., PKG-2024-001234)"
+          class="tracking-input">
+        <button (click)="trackPackage()" class="track-btn">Track Package</button>
+      </div>
+
+      <!-- Package Status Card -->
+      <div *ngIf="etaPrediction" class="status-card">
+        <div class="status-header">
+          <h2>Package: {{trackingNumber}}</h2>
+          <span class="status-badge">{{getCurrentStatus()}}</span>
+        </div>
+        
+        <div class="eta-section">
+          <div class="eta-main">
+            <h3>Estimated Delivery</h3>
+            <div class="eta-time">{{formatETA(etaPrediction.predictedDeliveryTime)}}</div>
+            <div class="confidence">Confidence: {{etaPrediction.confidence}}%</div>
+          </div>
+          
+          <div class="location-info">
+            <div class="current-location">
+              <strong>Current Location:</strong> {{etaPrediction.currentLocation}}
+            </div>
+            <div class="next-location">
+              <strong>Next Stop:</strong> {{etaPrediction.nextLocation}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scan Timeline -->
+      <div *ngIf="scanEvents.length > 0" class="timeline-section">
+        <h3>Tracking History</h3>
+        <div class="timeline">
+          <div *ngFor="let scan of scanEvents; let i = index" 
+               class="timeline-item"
+               [class.current]="i === 0">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="scan-location">{{scan.location}}</div>
+              <div class="scan-type">{{scan.scanType}}</div>
+              <div class="scan-time">{{formatDateTime(scan.timestamp)}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading/Error States -->
+      <div *ngIf="loading" class="loading">
+        <p>Tracking your package...</p>
+      </div>
+      
+      <div *ngIf="error" class="error">
+        <p>{{error}}</p>
+      </div>
+    </div>
