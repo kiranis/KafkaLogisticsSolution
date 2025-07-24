@@ -1,0 +1,47 @@
+
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Bb]uild[Ll]og.*
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+.vs/
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+*.vsix
+
+# Logs
+*.log
+
+# Secrets
+secrets.json
+appsettings.*.json
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# EF Core Migrations Snapshots
+*MigrationsSnapshot.cs
